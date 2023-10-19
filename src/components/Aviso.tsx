@@ -7,7 +7,10 @@ export default function Aviso() {
             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
         </div>
-        <p className="font-bold">Jorge</p>
+        <div className="flex flex-col">
+        <p className="font-bold">Problema</p>
+        <h4 className="text-xs">Jorge Silva</h4>
+        </div>
       </div>
       <div className="mt-8 mb-8">
         <p>
@@ -16,8 +19,10 @@ export default function Aviso() {
           aliquid, hic nam tempore nisi pariatur, illum, cupiditate atque
           molestiae exercitationem?
         </p>
+        
       </div>
       <button className="btn btn-outline">ACTION</button>
+      <p className="mt-6 flex justify-end">23/10/2023</p>
     </div>
   )
 }

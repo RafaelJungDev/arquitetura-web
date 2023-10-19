@@ -24,11 +24,11 @@ export default function SideMenu() {
       <h2 className="my-4">Gravidade</h2>
       <div className="form-control">
         <label className="label cursor-pointer">
-          <span className="label-text">Alto risco</span>
+          <span className="label-text">Sem Filtro</span>
           <input
             type="radio"
             name="radio-10"
-            className="radio checked:bg-red-500"
+            className="radio checked:bg-white"
             checked
           />
         </label>
@@ -44,17 +44,31 @@ export default function SideMenu() {
           />
         </label>
       </div>
+      
       <div className="form-control">
         <label className="label cursor-pointer">
           <span className="label-text">Moderado</span>
           <input
             type="radio"
             name="radio-10"
-            className="radio checked:bg-white"
+            className="radio checked:bg-warning"
             checked
           />
         </label>
       </div>
+      <div className="form-control">
+        <label className="label cursor-pointer">
+          <span className="label-text">Alto risco</span>
+          <input
+            type="radio"
+            name="radio-10"
+            className="radio checked:bg-red-500"
+            checked
+          />
+        </label>
+      </div>
+      
+      
     </div>
   )
 }
