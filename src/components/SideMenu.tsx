@@ -1,4 +1,15 @@
-export default function SideMenu() {
+'use client'
+
+import { useEffect } from 'react'
+
+interface SideMenuProps {
+  setCor: Function
+}
+
+export default function SideMenu({ setCor }: SideMenuProps) {
+  useEffect(() => {
+    console.log('oi')
+  }, [])
   return (
     <div className="h-full bg-neutral p-4">
       <div className="form-control w-full max-w-xs">
@@ -28,8 +39,8 @@ export default function SideMenu() {
           <input
             type="radio"
             name="radio-10"
-            className="radio checked:bg-white"
-            checked
+            className="radio bg-white"
+            onChange={() => setCor('')}
           />
         </label>
       </div>
@@ -39,20 +50,20 @@ export default function SideMenu() {
           <input
             type="radio"
             name="radio-10"
-            className="radio checked:bg-blue-500"
-            checked
+            className="radio bg-blue-500"
+            onChange={() => setCor('BLUE')}
           />
         </label>
       </div>
-      
+
       <div className="form-control">
         <label className="label cursor-pointer">
           <span className="label-text">Moderado</span>
           <input
             type="radio"
             name="radio-10"
-            className="radio checked:bg-warning"
-            checked
+            className="radio bg-warning"
+            onChange={() => setCor('yellow')}
           />
         </label>
       </div>
@@ -62,13 +73,11 @@ export default function SideMenu() {
           <input
             type="radio"
             name="radio-10"
-            className="radio checked:bg-red-500"
-            checked
+            className="radio bg-red-500"
+            onChange={() => setCor('RED')}
           />
         </label>
       </div>
-      
-      
     </div>
   )
 }

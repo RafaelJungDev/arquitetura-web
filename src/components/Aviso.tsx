@@ -1,4 +1,18 @@
-export default function Aviso() {
+interface AvisoProps {
+  title: string
+  description: string
+  date?: string
+  avatar?: string
+  gravidade?: string
+}
+
+export default function Aviso({
+  title,
+  description,
+  date,
+  avatar,
+  gravidade
+}: AvisoProps) {
   return (
     <div className="bg-base-100 rounded p-6 max-w-7xl mt-10">
       <div className="flex flex-row gap-4 items-center">
@@ -8,18 +22,12 @@ export default function Aviso() {
           </div>
         </div>
         <div className="flex flex-col">
-        <p className="font-bold">Problema</p>
-        <h4 className="text-xs">Jorge Silva</h4>
+          <p className="font-bold">{title}</p>
+          <h4 className="text-xs">Jorge Silva</h4>
         </div>
       </div>
       <div className="mt-8 mb-8">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo quis
-          culpa totam quam praesentium impedit voluptas aspernatur nihil ipsam
-          aliquid, hic nam tempore nisi pariatur, illum, cupiditate atque
-          molestiae exercitationem?
-        </p>
-        
+        <p>{description}</p>
       </div>
       <button className="btn btn-outline">ACTION</button>
       <p className="mt-6 flex justify-end">23/10/2023</p>
