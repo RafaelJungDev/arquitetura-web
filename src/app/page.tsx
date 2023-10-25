@@ -9,6 +9,7 @@ import Image from 'next/image'
 
 import { PrismaClient, receivedalerts } from '@prisma/client'
 import { Key, useEffect, useState } from 'react'
+import { Key, useEffect, useState } from 'react'
 
 import { prisma } from '@/lib/prisma'
 
@@ -36,10 +37,22 @@ export default async function Home() {
   //   }
   //   getData()
   // }, [cor])
+  const alertas = await getBaseData()
+
+
+  // useEffect(() => {
+  //   async function getData() {
+  //     const data = await (await fetch(`/api?cor=${cor}`)).json()
+  //     setFiltro(data)
+  //     console.log(data)
+  //   }
+  //   getData()
+  // }, [cor])
 
   console.log(alertas)
+  console.log(alertas)
 
-  return (
+  return (+
     <main className="">
       <Navbar></Navbar>
       <div className="flex flex-row">
@@ -50,6 +63,7 @@ export default async function Home() {
           <SideBarResponsive></SideBarResponsive>
         </div>
         <div className=" lg:p-0 p-12">
+          {alertas.map((item: any) => (
           {alertas.map((item: any) => (
             <Aviso
               title={item.alertid!}
